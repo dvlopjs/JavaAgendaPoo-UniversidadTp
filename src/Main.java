@@ -120,7 +120,13 @@ public class Main {
                     listModel.removeAllElements();
                     agenda.listarContactos().forEach(c -> listModel.addElement(c.toString()));
                     searchField.setText("");
-                    JOptionPane.showMessageDialog(frame, "Contacto eliminado.");
+
+                    if(nombre.isEmpty()) {
+                        JOptionPane.showMessageDialog(frame, "Por favor ingrese el nombre del contacto que desea eliminar.");
+                    }else {
+                        JOptionPane.showMessageDialog(frame, "Contacto eliminado.");
+                    }
+
                 }
             });
 
